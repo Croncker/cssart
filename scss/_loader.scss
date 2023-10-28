@@ -1,0 +1,44 @@
+@use "colors";
+@use "mixins";
+
+.loader{
+    height: 60rem;
+    width: 60rem;
+    background: colors.$liquid;
+    border-radius: 50%;
+    box-shadow: inset 0 0 5rem colors.$background;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader::before{
+    animation: loader 22s linear infinite;
+    @include mixins.loader;
+}
+
+.loader::after{
+    animation: loader2 10s linear infinite;
+    @include mixins.loader;
+}
+
+@keyframes loader{
+0%{
+    transform: rotate(0deg);
+}
+100%{
+    transform: rotate(360deg);
+}
+}
+
+@keyframes loader2{
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.loader:hover::after,
+.loader:hover::before{
+    top: -180%;
+}

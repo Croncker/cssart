@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background: #000;
+  display: grid;
+  place-items: center;
+}
+
+.loader {
+  height: 60rem;
+  width: 60rem;
+  background: #990000;
+  border-radius: 50%;
+  box-shadow: inset 0 0 5rem #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader::before {
+  animation: loader 22s linear infinite;
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  border-radius: 40%;
+  background: #111;
+  opacity: 0.8;
+  transition: 2s;
+}
+
+.loader::after {
+  animation: loader2 10s linear infinite;
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  height: 200%;
+  width: 200%;
+  border-radius: 40%;
+  background: #111;
+  opacity: 0.8;
+  transition: 2s;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.loader:hover::after,
+.loader:hover::before {
+  top: -180%;
+}
+
+/*# sourceMappingURL=style.css.map */

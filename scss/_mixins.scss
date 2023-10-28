@@ -1,0 +1,12 @@
+@mixin loader{
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    height: 200%;
+    width: 200%;
+    border-radius: 40%;
+    background: #111;
+    opacity: 0.8;
+    transition: 2s;
+}
